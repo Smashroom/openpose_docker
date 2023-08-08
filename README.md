@@ -39,3 +39,14 @@ $ cmake -DBUILD_PYTHON=ON .. && make -j `nproc`
 
 Voila! 
 
+
+## FAQ
+
+1. If you get the following error while compiling with `CPU` support:
+```
+/usr/bin/ld: error: ../../caffe/lib/libcaffe.so: file too short
+```
+
+run the following command within the build directory:
+
+`export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/workspace/openpose_ws/openpose/build/caffe/lib/`

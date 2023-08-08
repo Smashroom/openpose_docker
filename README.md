@@ -29,7 +29,7 @@ $ cd docker
 $ chmod +x run_devcontainer.sh
 $ ./run_devcontainer.sh
 ```
-5. Let's build our lovely repo 
+5. Let's build our lovely repo within the container
 ```
 $ cd /workspace/openpose_ws/openpose
 $ mkdir build
@@ -39,7 +39,3 @@ $ cmake -DBUILD_PYTHON=ON .. && make -j `nproc`
 
 Voila! 
 
-
-### Example
-`docker run -it --rm --gpus all -e NVIDIA_VISIBLE_DEVICES=0 cwaffles/openpose`
-The Openpose repo is in `/openpose`

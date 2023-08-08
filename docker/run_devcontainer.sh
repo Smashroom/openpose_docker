@@ -31,7 +31,6 @@ docker run -it \
     --net=host \
     --runtime=nvidia \
     --gpus all \
-    -e NVIDIA_VISIBLE_DEVICES=0 \
     --env="DISPLAY=$DISPLAY" \
     --env="QT_X11_NO_MITSHM=1" \
     --cap-add=SYS_PTRACE \

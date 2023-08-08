@@ -34,7 +34,7 @@ $ ./run_devcontainer.sh
 $ cd /workspace/openpose_ws/openpose
 $ mkdir build
 $ cd build
-$ cmake -DBUILD_PYTHON=ON .. && make -j `nproc`
+$ cmake -DBUILD_PYTHON=ON -DUSE_CUDNN=OFF .. && make -j `nproc`
 ```
 
 Voila! 
@@ -50,3 +50,6 @@ Voila!
 run the following command within the build directory:
 
 `export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/workspace/openpose_ws/openpose/build/caffe/lib/`
+
+
+2. 

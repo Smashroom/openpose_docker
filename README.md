@@ -7,6 +7,39 @@ https://hub.docker.com/r/cwaffles/openpose
 - Nvidia Docker runtime: https://github.com/NVIDIA/nvidia-docker#quickstart
 - CUDA 10.0 or higher on your host, check with `nvidia-smi`
 
+## Installation
+
+1. Clone the repo to this folder
+```
+git clone git@github.com:CMU-Perceptual-Computing-Lab/openpose.git
+```
+2. Update the submodules
+```
+git submodule update --init --recursive --remote
+```
+3. Build the docker container (can be run parallel with Steps 1-2)
+```
+$ cd docker
+$ chmod +x build_devcontainer.sh
+$ ./build_devcontainer.sh 
+```
+4. Once everything is finished run the container
+```
+$ cd docker
+$ chmod +x run_devcontainer.sh
+$ ./run_devcontainer.sh
+```
+5. Let's build our lovely repo 
+```
+$ cd /workspace/openpose_ws/openpose
+$ mkdir build
+$ cd build
+$ cmake -DBUILD_PYTHON=ON .. && make -j `nproc`
+```
+
+Voila! 
+
+
 ### Example
 `docker run -it --rm --gpus all -e NVIDIA_VISIBLE_DEVICES=0 cwaffles/openpose`
 The Openpose repo is in `/openpose`
